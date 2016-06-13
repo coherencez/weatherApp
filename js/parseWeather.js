@@ -48,6 +48,11 @@ function parseCurrentWeather (currentWeather) {
 																<p>Wind speed: ${windSpeed} knots</p>
 															</section>
 													  </div>
+												  </div>
+												  <div class="row">
+												  	<div class="col-sm-2 col-sm-offset-4">
+												  		<button id="fiveDay" class="btn btn-primary">5-Day Forecast >></button>
+												  	</div>
 												  </div>`;
 			
 	outputContainer.innerHTML += weatherString;	

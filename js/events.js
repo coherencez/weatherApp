@@ -2,9 +2,11 @@ var weatherReport = (function (oldWeatherReport) {
 	var input = document.getElementById('cityInput'),
 			submit = document.getElementById('submitButton'),
 			unitSelect = document.getElementById('unitSelect'),
-			forecastSelect = document.getElementById('forecastSelect');
+			forecastSelect = document.getElementById('forecastSelect'),
+			fiveDayButton = document.getElementById('fiveDay');
 
 	oldWeatherReport.addEvents = function () {
+
 		submit.addEventListener('click', function () {
 			let city = input.value,
 					unit = unitSelect.value;
@@ -17,6 +19,12 @@ var weatherReport = (function (oldWeatherReport) {
 				weatherReport.loadFiveDayForecast(unit);
 			}
 		});
+
+		// fiveDayButton.addEventListener('click', function () {
+		// 	let unit = unitSelect.value;
+		// 	weatherReport.loadFiveDayForecast(unit);
+		// });
+
 
 	};
 	
