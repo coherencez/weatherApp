@@ -4,7 +4,6 @@ function parseCurrentWeather (currentWeather) {
 			cityName = currentWeather.name,
 			cityString = '',
 			weatherString = '';
-		// console.log(currentWeather);
 			cityString += `<div class="row">
 											<div class="col-sm-6 col-sm-offset-3 weatherCity">
 												<h1 id="city">${cityName}</h1>
@@ -19,7 +18,6 @@ function parseCurrentWeather (currentWeather) {
 		    humidity = forecast.main.humidity,
 		    windSpeed = Math.floor(forecast.wind.speed);
 				day = newDate.getDay();
-				console.log(forecast);
 
 				if (day === 0) {
 					day = 'Monday';
@@ -39,7 +37,7 @@ function parseCurrentWeather (currentWeather) {
 
 			
 				weatherString += `<div class="row">
-														<div class="col-sm-4 col-sm-offset-4 weatherCard">
+														<div class="col-sm-4 col-sm-offset-4 currentWeatherCard">
 															<header>
 																<h4 id="weatherDay">${day}</h4>
 															</header>
@@ -59,10 +57,9 @@ function parseCurrentWeather (currentWeather) {
 function parseFiveDayForecast (forecastWeather) {
 			forecastWeather = weatherReport.getForecast();
 	var outputContainer = document.getElementById('output'),
-			cityName = forecastWeather.name,
+			cityName = forecastWeather.city.name,
 			cityString = '',
 			weatherString = '';
-		// console.log(forecastWeather);
 			cityString += `<div class="row">
 											<div class="col-sm-6 col-sm-offset-3 weatherCity">
 												<h1 id="city">${cityName}</h1>
@@ -73,12 +70,11 @@ function parseFiveDayForecast (forecastWeather) {
 	for (var i = 0; i < forecastWeather.list.length; i++) {
 		let forecast = forecastWeather.list[i],
 		    newDate = new Date(forecast.dt * 1000),
-		    temp = forecast.main.temp,
+		    temp = Math.round(forecast.main.temp),
         weather = forecast.weather[0].description,
 		    humidity = forecast.main.humidity,
 		    windSpeed = forecast.wind.speed;
 				day = newDate.getDay();
-				console.log(forecast);
 
 				if (day === 0) {
 					day = 'Monday';
@@ -98,12 +94,12 @@ function parseFiveDayForecast (forecastWeather) {
 
 			
 				if (i % 8 === 0) {
-				weatherString += `<div class="col-sm-3 weatherCard">
+				weatherString += `<div class="col-sm-2 weatherCard">
 															<header>
-																<h4 id="weatherDay">${day}</h4>
+																<h5 id="weatherDay">${day}</h5>
 															</header>
 															<section id="weatherinfo">
-																<h5>${temp} degrees.</h5>
+																<h5>${temp}&deg;</h5>
 																<p>${weather}</p>
 																<p>${humidity}% Humidity</p>
 																<p>Wind speed: ${windSpeed}</p>
