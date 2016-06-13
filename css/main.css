@@ -1,0 +1,69 @@
+body {
+	background-image: url('http://cdn.weatheravenue.com/img/background/background.jpg');
+	background-size: 1250px;
+}
+
+.row {
+	margin: 2%;
+}
+
+.col-centered {
+	float: 0;
+	margin: 0 auto;
+}
+
+.pageTitle {
+	color: white;
+	text-align: center;
+}
+
+.navbar {
+  box-shadow: 0 5px 6px -3px rgba(0,0,0,1);
+  margin-top: 5%;
+	width: 100%;
+}
+
+.navbar-form {
+	margin-right: 1%;
+}
+
+.navbar .selectBox {
+	display: inline;
+	width: 15%;
+	margin-top: 8px;
+	margin-left: 1%;
+}
+
+.weatherCity {
+	color: rgba(255,255,255,1);
+	text-align: center;
+}
+
+.weatherCity #city {
+	height: 50px;
+	padding-top: 3.5px;
+	background: rgba(0,0,0,.6);
+  box-shadow: 5px 6px 7px 0px rgba(0,0,0,.6);
+}
+
+.weatherCard {
+	color: rgba(255,255,255,1);
+	text-align: center;
+}
+
+.weatherCard header {
+	margin-bottom: 3%;
+	height: 35px;
+	background: rgba(0,0,0,.6);
+	box-shadow: 5px 6px 7px 0px rgba(0,0,0,0.8);
+}
+
+.weatherCard #weatherDay {
+	padding-top: 3%;
+}
+
+.weatherCard #weatherinfo {
+	padding: 5%;
+	background: rgba(0,0,0,.6);
+	box-shadow: 5px 6px 7px 0px rgba(0,0,0,0.8);
+}
